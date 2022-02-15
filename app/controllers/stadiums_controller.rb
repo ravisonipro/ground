@@ -1,6 +1,7 @@
 class StadiumsController < ApplicationController
 before_action :set_stadium, only: %i[ show edit update destroy ]
 before_action :authenticate_user!
+load_and_authorize_resource
 
   # GET /stadiums or /stadiums.json
   def index

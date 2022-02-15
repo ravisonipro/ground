@@ -21,8 +21,8 @@ class User < ApplicationRecord
     end
   end
 
-  def is?( requested_role )
-    self.role == requested_role.to_s
-  end
+  # def is?( requested_role )
+  #   self.role == requested_role.to_s
+  # end
 
 end  
