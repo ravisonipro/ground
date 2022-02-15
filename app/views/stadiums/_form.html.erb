@@ -1,0 +1,49 @@
+<div class="form">
+
+ <%= form_with url: stadiums_url do |f| %>   
+ 
+ <% if @stadium.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@stadium.errors.count, "error") %> prohibited
+        this stadium from being saved:
+      </h2>
+      <ul>
+        <% @stadium.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div> 
+
+  <% end %>
+     
+    
+  <div>
+    <%= f.label :stadium_name %><br>
+    <%= f.text_field :s_name %>
+  </div>
+
+  <br>
+  
+  <div>
+    <%= f.label :info %><br>
+    <%= f.text_area :info %>
+  </div>
+
+  <br>
+
+  <%= f.select :s_type, options_for_select([["cricket"], ["badminton"], ["tabletennis"], ["hockey"]]) %>
+  
+  <br><br>
+
+   <div>
+    <%= f.label :location %><br>
+    <%= f.text_area :location %>
+  </div>
+  
+  <br>
+  <div>
+    <%= f.submit %>
+  </div>
+
+<% end %>
