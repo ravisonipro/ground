@@ -60,3 +60,9 @@ gem 'devise'
 gem "rolify"
 
 gem 'cancancan'
+
+gem 'carrierwave', '~> 2.0'
+
+gem 'local_time'
+
+gem "simple_calendar", "~> 2.4"

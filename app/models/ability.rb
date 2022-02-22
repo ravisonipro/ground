@@ -8,7 +8,7 @@ class Ability
     #
       user ||= User.new # guest user (not logged in)
       if user.has_role? :owner
-        can :create, :all
+        can :manage, :all
       else
         can :read, :all
       end

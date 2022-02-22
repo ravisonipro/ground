@@ -25,9 +25,7 @@ load_and_authorize_resource
   # POST /stadiums or /stadiums.json
   def create
     @stadium = current_user.stadiums.build(stadium_params)
-    if @stadium.save
-      render "stadiums", locals: {stadiums: @stadiums}
-    end
+    
     respond_to do |format|
       if @stadium.save
         format.html { redirect_to @stadium, notice: "Stadium was successfully created." }
@@ -71,7 +69,7 @@ load_and_authorize_resource
 
   # Only allow a list of trusted parameters through.
   def stadium_params
-    params.permit(:s_name, :s_type, :info, :location)
+    params.permit(:s_name, :s_type, :info, :location, :picture)
   end
 
 end

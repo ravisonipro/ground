@@ -1,0 +1,27 @@
+<h2>
+  <strong>stadium:</strong>
+  <%= @stadium.s_name %>
+</h2>
+
+<p>
+  <strong>Sport:</strong>
+  <%= @stadium.s_type %>
+</p>
+
+<p>
+  <strong>Info:</strong>
+  <%= @stadium.info %>
+</p>
+
+<p>
+  <strong>location:</strong>
+  <%= @stadium.location %>
+</p>
+
+<h2> Book your slot <h2>
+
+
+<%= link_to 'Edit', edit_stadium_path(@stadium) %> |
+<%= link_to 'Back', stadiums_path %>
+
+

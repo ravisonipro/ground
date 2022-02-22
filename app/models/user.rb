@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :stadiums
+  has_many :bookings
 
   after_create :assign_role_to_user
   

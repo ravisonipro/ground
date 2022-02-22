@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_10_092158) do
+ActiveRecord::Schema.define(version: 2022_02_17_105837) do
+
+  create_table "bookings", force: :cascade do |t|
+    t.string "date"
+    t.string "start_time"
+    t.string "end_time"
+    t.integer "user_id"
+    t.integer "stadium_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "roles", force: :cascade do |t|
     t.string "name"
@@ -23,6 +33,15 @@ ActiveRecord::Schema.define(version: 2022_02_10_092158) do
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource"
   end
 
+  create_table "slots", force: :cascade do |t|
+    t.string "start_time"
+    t.string "end_time"
+    t.boolean "avail"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "date"
+  end
+
   create_table "stadia", force: :cascade do |t|
     t.string "s_name"
     t.string "s_type"
@@ -31,6 +50,7 @@ ActiveRecord::Schema.define(version: 2022_02_10_092158) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+    t.string "picture"
   end
 
   create_table "stadium", force: :cascade do |t|

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :slots
+  resources :bookings
+ 
   # devise_for :users, controllers: {
   #   sessions: 'users/sessions'
   # }
@@ -7,7 +10,5 @@ Rails.application.routes.draw do
   get 'welcome/index'
   root to: "welcome#index"
 
-  
   resources :stadiums
-
 end

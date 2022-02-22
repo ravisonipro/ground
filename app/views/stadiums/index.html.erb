@@ -1,0 +1,28 @@
+<h1>Sports Hub</h1>
+
+<div id = "new-stadium">
+  <%= link_to 'Add a New Stadium', new_stadium_path, remote:false %> 
+</div>
+
+  <table class="table">
+    
+    <tr>
+      <th>Stadium</th>
+      <th>Sport</th> 
+      <th>Info</th> 
+      <th>Location</th> <br><br>
+      <th colspan="2"></th>
+    </tr>
+  <tbody>
+    <% @stadiums.each do |stadium| %>
+    <tr>
+      <td><%= stadium.s_name %></td>
+      <td><%= stadium.s_type %></td>
+      <td><%= stadium.info %></td>
+      <td><%= stadium.location %></td>
+      <td><%= link_to 'Book', bookings_new_path %></td> 
+      <td><%= link_to 'Show', stadium %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
